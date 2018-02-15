@@ -1,0 +1,10 @@
+User: Hello
+[Hello]
+
+User: my name is steven roger
+[my, name, is, steven, roger]
+
+User: DO you know da wae
+[DO, you, know, da, wae]
+
+

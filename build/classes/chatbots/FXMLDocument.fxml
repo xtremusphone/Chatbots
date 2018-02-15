@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="423.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatbots.FXMLDocumentController">
+    <children>
+      <TextArea fx:id="chatWindow" editable="false" prefHeight="398.0" prefWidth="629.0" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <TextField fx:id="inputField" layoutY="397.0" onAction="#handleEnterButton" prefHeight="25.0" prefWidth="547.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="90.0" />
+      <Button fx:id="enterButton" layoutX="546.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="83.0" text="Enter" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+    </children>
+</AnchorPane>

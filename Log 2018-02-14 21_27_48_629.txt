@@ -1,0 +1,7 @@
+User: Industrial strength 
+[Industrial, strength]
+User: NLP
+[NLP]
+User: this is not da wae
+[this, is, not, da, wae]
+

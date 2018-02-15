@@ -1,0 +1,7 @@
+User: Olla Amigo
+[Olla, Amigo]
+User: My name is Amir
+[My, name, is, Amir]
+User: Federal Bureau Intelligence is known as F.B.I..
+[Federal, Bureau, Intelligence, is, known, as, F.B.I., .]
+
