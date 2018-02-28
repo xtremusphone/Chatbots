@@ -1,0 +1,5 @@
+User: the 1998 Olympic
+the [DT], 1998 [CD], Olympic [NNP], 
+[Olympic ]
+
+

@@ -1,0 +1,4 @@
+User: My name is Azwan
+My [PRP$], name [NN], is [VBZ], Azwan [NNP], 
+
+

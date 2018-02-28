@@ -1,0 +1,5 @@
+User: Camelia and Amir Arif is playing at the park right now
+Camelia [NNP], and [CC], Amir [NNP], Arif [NNP], is [VBZ], playing [VBG], at [IN], the [DT], park [NN], right [NN], now [RB], 
+[Camelia ][Amir Arif ]
+
+

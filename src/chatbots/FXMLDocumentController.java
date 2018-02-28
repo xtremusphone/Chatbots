@@ -22,6 +22,7 @@ import nlp.WordTokenizer;
  *
  * @author User
  */
+
 public class FXMLDocumentController implements Initializable {
     
     @FXML
@@ -36,6 +37,8 @@ public class FXMLDocumentController implements Initializable {
     private String chatLogs = "";
     
     private WordTokenizer tokenizer;
+   
+    private CoreArchitecture core = new CoreArchitecture();
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -54,7 +57,8 @@ public class FXMLDocumentController implements Initializable {
 
     private void onEnter(){
         tokenizer = new WordTokenizer();
-        chatLogs += "User: "+ inputField.getText() + "\n" + tokenizer.tokenizer(inputField.getText()) + "\n\n";
+        
+        chatLogs += "User: "+ inputField.getText() + "\n" + core.botReply(inputField.getText()) + "\n\n";
         chatWindow.setText(chatLogs);
         inputField.setText("");
     }

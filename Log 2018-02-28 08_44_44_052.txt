@@ -1,0 +1,13 @@
+User: Sally and Amir Arif is playing at the park right now
+Sally [NNP], and [CC], Amir [NNP], Arif [NNP], is [VBZ], playing [VBG], at [IN], the [DT], park [NN], right [NN], now [RB], 
+[Sally][Amir Arif]
+
+User: Amir Arif's dog is peeing at the tree
+Amir [NNP], Arif [NNP], 's [POS], dog [NN], is [VBZ], peeing [NN], at [IN], the [DT], tree [NN], 
+[Amir Arif]
+
+User: aren't
+aren't [NN], 
+
+
+

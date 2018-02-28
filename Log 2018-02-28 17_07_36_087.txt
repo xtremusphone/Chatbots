@@ -1,0 +1,5 @@
+User: the little yellow dog barked at the cat
+the [DT], little [JJ], yellow [JJ], dog [NN], barked [NN], at [IN], the [DT], cat [NN], 
+
+
+
