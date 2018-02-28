@@ -1,0 +1,52 @@
+User: This is a chatbot
+[This, is, a, chatbot]
+
+User: Not yet finished
+[Not, yet, finished]
+
+User: i supposed
+[i, supposed]
+
+User: asd
+[asd]
+
+User: as
+[as]
+
+User: das
+[das]
+
+User: das
+[das]
+
+User: d
+[d]
+
+User: ad
+[ad]
+
+User: asd
+[asd]
+
+User: asd
+[asd]
+
+User: asd
+[asd]
+
+User: sad
+[sad]
+
+User: a
+[a]
+
+User: dsa
+[dsa]
+
+User: d
+[d]
+
+User: 
+null
+
+

@@ -1,0 +1,4 @@
+[21:14:57]User: This is something that i cannot bear
+[This, is, something, that, i, cannot, bear]
+
+
