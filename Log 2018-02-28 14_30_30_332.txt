@@ -1,0 +1,5 @@
+User: Where's the nearest restaurant?
+Where [WRB], 's [VBZ], the [DT], nearest [JJS], restaurant [NN], ? [.], 
+
+
+

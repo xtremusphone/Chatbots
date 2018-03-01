@@ -1,0 +1,20 @@
+User: who am i?
+who [WP], am [VBP], i [PRP], ? [.], 
+You are Amir
+
+User: Harry ran away from school.
+Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], . [.], 
+
+User: red
+red [NNP], 
+
+User: green
+green [NNP], 
+
+User: brown
+brown [NNP], 
+
+User: Amir is a boy
+Amir [NNP], is [VBZ], a [DT], boy [NN], 
+
+

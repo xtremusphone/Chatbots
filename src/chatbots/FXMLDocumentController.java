@@ -22,6 +22,7 @@ import nlp.WordTokenizer;
  *
  * @author User
  */
+
 public class FXMLDocumentController implements Initializable {
     
     @FXML
@@ -36,6 +37,8 @@ public class FXMLDocumentController implements Initializable {
     private String chatLogs = "";
     
     private WordTokenizer tokenizer;
+   
+    private CoreArchitecture core = new CoreArchitecture();
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -54,9 +57,14 @@ public class FXMLDocumentController implements Initializable {
 
     private void onEnter(){
         tokenizer = new WordTokenizer();
+<<<<<<< HEAD
+        
+        chatLogs += "User: "+ inputField.getText() + "\n" + core.botReply(inputField.getText()) + "\n\n";
+=======
         SimpleDateFormat time_formatter = new SimpleDateFormat("HH:mm:ss");
         String current_time_str = time_formatter.format(System.currentTimeMillis());
         chatLogs += "[" + current_time_str + "] User: "+ inputField.getText() + "\n" + tokenizer.tokenizer(inputField.getText()) + "\n\n";
+>>>>>>> a03ee4c3992227ba26fdd4a3f0fdf743a00b476e
         chatWindow.setText(chatLogs);
         inputField.setText("");
     }

@@ -1,0 +1,19 @@
+User: Harry ran away from home
+Harry [NNP], ran [VBD], away [RB], from [IN], home [NN], 
+
+User: Who ran away?
+Who [WP], ran [VBD], away [RB], ? [.], 
+
+User: What did Harry do
+What [WP], did [VBD], Harry [NNP], do [VBP], 
+
+User: Where did Harry run away from
+Where [WRB], did [VBD], Harry [NNP], run [NN], away [RB], from [IN], 
+
+User: Harry ran away from home because he found it boring
+Harry [NNP], ran [VBD], away [RB], from [IN], home [NN], because [IN], he [PRP], found [VBD], it [PRP], boring [JJ], 
+
+User: why did he ran away
+why [WRB], did [VBD], he [PRP], ran [VBD], away [RB], 
+
+

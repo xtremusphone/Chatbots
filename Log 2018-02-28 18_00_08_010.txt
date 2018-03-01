@@ -1,0 +1,37 @@
+User: what is 2 + 2
+what [WP], is [VBZ], 2 [CD], + [NN], 2 [CD], 
+
+
+User: 2 people were found dead
+2 [CD], people [NNS], were [VBD], found [VBN], dead [JJ], 
+
+
+User: Harry ran away from school because he found it boring
+Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], because [IN], he [PRP], found [VBD], it [PRP], boring [JJ], 
+
+
+User: what is 25 + 5
+what [WP], is [VBZ], 25 [CD], + [NN], 5 [NN], 
+
+
+User: he bought orange and tomato
+he [PRP], bought [VBD], orange [NNP], and [CC], tomato [NN], 
+
+
+User: he bought oranges and tomato
+he [PRP], bought [VBD], oranges [NN], and [CC], tomato [NN], 
+
+
+User: When you hit a creature with this weapon, you can expend a spell slot to deal additional damage, and you can reduce the creature's speed to 0 feet until the end of your next turn.
+When [WRB], you [PRP], hit [VBD], a [DT], creature [NN], with [IN], this [DT], weapon [NN], , [,], you [PRP], can [MD], expend [NN], a [DT], spell [NN], slot [NN], to [TO], deal [VB], additional [JJ], damage [NN], , [,], and [CC], you [PRP], can [MD], reduce [VB], the [DT], creature [NN], 's [POS], speed [NN], to [TO], 0 [NN], feet [NNS], until [IN], the [DT], end [NN], of [IN], your [PRP$], next [JJ], turn [NN], . [.], 
+
+
+User: they are a team and a and
+they [PRP], are [VBP], a [DT], team [NN], and [CC], a [DT], and [CC], 
+
+
+User: he is a guy but he is a guy
+he [PRP], is [VBZ], a [DT], guy [NN], but [CC], he [PRP], is [VBZ], a [DT], guy [NN], 
+
+
+
