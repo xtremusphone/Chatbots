@@ -1,9 +1,0 @@
-User: my name is Muhammad Amir Arif
-my [PRP$], name [NN], is [VBZ], Muhammad [NNP], Amir [NNP], Arif [NNP], 
-Muhammad Amir Arif 
-
-User: Harry and Sally are playing together right now
-Harry [NNP], and [CC], Sally [NNP], are [VBP], playing [VBG], together [RB], right [RB], now [RB], 
-Harry Sally 
-
-

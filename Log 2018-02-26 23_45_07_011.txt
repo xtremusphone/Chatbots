@@ -1,4 +1,0 @@
-User: What is your name?
-What [WP], is [VBZ], your [PRP$], name [NN], ? [.], 
-
-

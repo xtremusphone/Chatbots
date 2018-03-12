@@ -1,5 +1,0 @@
-User: Harris and Amir Arif is at the canteen eating
-Harris [NNP], and [CC], Amir [NNP], Arif [NNP], is [VBZ], at [IN], the [DT], canteen [NN], eating [VBG], 
-
-
-
