@@ -1,0 +1,22 @@
+User: Harry run away from school because he found it boring
+Bot: Thank you for informing me ;)
+
+User: who ran away?
+Bot: Harry
+
+User: Where did he ran away
+Bot: from schoolI am not sure about that
+
+User: why did he ran away?
+Bot: because he found it boringI am not sure about that
+
+User: who ran away?
+Bot: Harry
+
+User: did Harry ran away?
+Bot: I am not sure about that
+
+User: why did he ran away?
+Bot: because he found it boringI am not sure about that
+
+

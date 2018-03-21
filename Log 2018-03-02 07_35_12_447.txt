@@ -1,4 +1,0 @@
-[07:35:03] User: My name is David
-[My, name, is, David]
-
-

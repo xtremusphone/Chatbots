@@ -180,6 +180,7 @@ public class InformationDissemination {
     public void addInformation(ArrayList<ArrayList<String>> sentences){
         //sentences = checkOverlap(sentences);
         for(ArrayList<String> x:sentences){
+            System.out.println(x.toString());
             if(x.contains("#WHILE")){
                 int while_index = x.indexOf("#WHILE");
                 String temp = "while ";
@@ -343,6 +344,9 @@ public class InformationDissemination {
                 ans.add(person);
                 keys.add(temp);
                 map_q.add("Who");
+                ans.add(person);
+                keys.add(temp);
+                map_q.add("What");
                 temp = temp.replace(",", " ");
                 ans.add(temp);
                 keys.add(person);
