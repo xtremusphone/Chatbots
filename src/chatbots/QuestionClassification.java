@@ -68,4 +68,10 @@ public class QuestionClassification {
             return true;
         return false;
     }
+    
+    public boolean isDid(HashMap<String,String> tagged,ArrayList<String> sentence){
+        if(sentence.get(0).equalsIgnoreCase("did"))
+            return true;
+        return false;
+    }
 }

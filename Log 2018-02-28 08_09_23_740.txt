@@ -1,7 +1,0 @@
-User: Albert is Amir's cat
-Albert [NNP], is [VBZ], Amir [NNP], 's [POS], cat [NN], 
-
-User: That is true
-That [IN], is [VBZ], true [JJ], 
-
-

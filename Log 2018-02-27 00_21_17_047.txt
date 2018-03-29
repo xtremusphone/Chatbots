@@ -1,7 +1,0 @@
-User: read
-read [VB], 
-
-User: the red
-the [DT], red [NNP], 
-
-

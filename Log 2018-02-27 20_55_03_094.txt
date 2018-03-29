@@ -1,4 +1,0 @@
-User: Did Harry ran away
-Did [VBD], Harry [NNP], ran [VBD], away [RB], 
-
-

@@ -1,5 +1,0 @@
-User: He is running away
-He [PRP], is [VBZ], running [VBG], away [RB], 
-
-
-

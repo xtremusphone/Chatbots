@@ -1,5 +1,0 @@
-User: The boy threw the ball
-The [DT], boy [NN], threw [VBD], the [DT], ball [NN], 
-
-
-

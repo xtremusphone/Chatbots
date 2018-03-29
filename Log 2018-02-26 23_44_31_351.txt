@@ -1,4 +1,0 @@
-User: What is your name?
-What [NNP], is [NN], your [NN], name [NN], ? [NN], 
-
-

@@ -1,9 +1,0 @@
-User: she did not want to hit her
-she [PRP], did [VBD], not [RB], want [VB], to [TO], hit [VB], her [PRP$], 
-
-
-User: Why are you laughing?
-Why [WRB], are [VBP], you [PRP], laughing [VBG], ? [.], 
-
-
-

@@ -1,9 +1,0 @@
-User: killing him would cost us
-killing [VBG], him [PRP], would [MD], cost [VB], us [PRP], 
-
-
-User: he was killed in the event
-he [PRP], was [VBD], killed [VBN], in [IN], the [DT], event [NN], 
-
-
-

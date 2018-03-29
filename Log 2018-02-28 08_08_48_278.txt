@@ -1,4 +1,0 @@
-User: Albert is Amir's cat
-Albert [NNP], is [VBZ], Amir [NNP], 's [POS], Amir's [NNP], cat [NN], 
-
-

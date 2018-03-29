@@ -1,0 +1,5 @@
+User: Harry bought a small cat
+Harry [NNP], bought [VBD], a [DT], small [JJ], cat [NN], 
+Bot: Thank you for informing me ;)
+
+
