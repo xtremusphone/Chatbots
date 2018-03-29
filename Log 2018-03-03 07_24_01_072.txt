@@ -1,0 +1,9 @@
+User: The house was cleaned by Amir and Kamal
+The [DT], house [NN], was [VBD], cleaned [DT], by [IN], Amir [NNP], and [CC], Kamal [NNP], 
+
+
+User: Amir and Kamal cleaned the house
+Amir [NNP], and [CC], Kamal [NNP], cleaned [NNP], the [DT], house [NN], 
+
+
+

@@ -2,20 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/CoreArchitecture.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/Chatbots.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/FXMLDocumentController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/InformationDissemination.java</file>
-=======
+            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/InformationDissemination.java</file>
+            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/CoreArchitecture.java</file>
+            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/QuestionClassification.java</file>
             <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/Chatbots.java</file>
             <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/FXMLDocumentController.java</file>
->>>>>>> a03ee4c3992227ba26fdd4a3f0fdf743a00b476e
         </group>
->>>>>>> f92bcd673050898dd29d132a79d2fd16598d5009
     </open-files>
 </project-private>

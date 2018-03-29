@@ -1,0 +1,5 @@
+User: Amir and Kamal cleaned the room
+Amir [NNP], and [CC], Kamal [NNP], cleaned [NNP], the [DT], room [NN], 
+
+
+
