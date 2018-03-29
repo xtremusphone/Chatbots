@@ -8,8 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Chatbots.jar" size="18316" download="eager" />
-    <jar href="lib\NLP.jar" size="39603" download="eager" />
+    <jar href="Chatbots.jar" size="20262" download="eager" />
+    <jar href="lib\NLP.jar" size="40658" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Chatbots" >
     <param name="requiredFXVersion" value="8.0+"/>

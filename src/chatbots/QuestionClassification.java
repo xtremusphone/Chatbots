@@ -9,6 +9,13 @@ public class QuestionClassification {
         
     }
     
+    public boolean isQuestion(HashMap<String,String> tagged,ArrayList<String> sentence){
+        if(isDid(tagged, sentence) || isHow(tagged, sentence) || isWhat(tagged, sentence) || isWhen(tagged, sentence) || isWhere(tagged, sentence) || isWho(tagged, sentence) || isWhy(tagged, sentence))
+            return true;
+        else
+            return false;
+    }
+    
     public boolean isWho(HashMap<String,String> tagged,ArrayList<String> sentence){
         if(sentence.contains("who") || sentence.contains("Who"))
             return true;

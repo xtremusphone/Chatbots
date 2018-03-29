@@ -1,0 +1,9 @@
+User: Amir did not eat the whole day
+Amir [NNP], did [VBD], not [RB], eat [VB], the [DT], whole [JJ], day [NN], 
+Bot: Thank you for informing me ;)
+
+User: Did Amir eat?
+Did [VBD], Amir [NNP], eat [VB], ? [.], 
+Bot: Yes
+
+
