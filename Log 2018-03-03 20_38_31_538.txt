@@ -1,0 +1,9 @@
+User: He has no living relatives
+He [PRP], has [VBZ], no [DT], living [NN], relatives [NNS], 
+
+
+User: he is living alone at his small house
+he [PRP], is [VBZ], living [VBG], alone [RB], at [IN], his [PRP$], small [JJ], house [NN], 
+
+
+

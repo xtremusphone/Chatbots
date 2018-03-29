@@ -1,0 +1,8 @@
+User: Hello my name is Amir Arif
+Hello [NNP], my [PRP$], name [NN], is [VBZ], Amir [NNP], Arif [NNP], 
+
+
+[07:37:54] User: Hello my name is Amir Arif
+[Hello, my, name, is, Amir, Arif]
+
+

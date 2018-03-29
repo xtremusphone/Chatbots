@@ -1,0 +1,5 @@
+User: The house was cleaned by Ahmad and Amir
+The [DT], house [NN], was [VBD], cleaned [DT], by [IN], Ahmad [NNP], and [CC], Amir [NNP], 
+
+
+

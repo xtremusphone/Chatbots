@@ -8,11 +8,19 @@ import nlp.WordTokenizer;
 
 public class InformationDissemination {
     
+<<<<<<< HEAD
+    private ArrayList<String> answers;
+    private ArrayList<String> keyword;
+    private ArrayList<String> q_type;
+    
+=======
     //ST indicates that the sentence used special token which will be broken down later when it is keyed in to the KNOWLEDGE BASE
     
     private WordTokenizer tk = new WordTokenizer();
+>>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
     private HashMap<String,String> tagged;
     private ArrayList<String> sentence;
+    private String sentence_build = "";
     
     private String[] special_token = {"#WHILE","#BECAUSE","#FROM","#TO","#IN","#FOR","#AT","#ON","#AFTER","#BEFORE","#BY","#WITH"};
     
@@ -24,6 +32,13 @@ public class InformationDissemination {
     public InformationDissemination(HashMap<String,String> tag,ArrayList<String> sntc){
         tagged = tag;
         sentence = sntc;
+<<<<<<< HEAD
+        answers = new ArrayList<>();
+        keyword = new ArrayList<>();
+        q_type = new ArrayList<>();
+        for(String x:sentence){
+            sentence_build += x + " ";
+=======
     }
     
     public ArrayList<ArrayList<String>> splitSentenceConnector(){
@@ -365,9 +380,89 @@ public class InformationDissemination {
                 root_sentence.add(stitch);
             }
             
+>>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
         }
     }
     
+<<<<<<< HEAD
+    public ArrayList<String> splitSentence(){
+        //splitting sentence
+        ArrayList<String> sentence_list = new ArrayList<>();
+        mergeNNP();
+        if(sentence.contains("and")){
+            int and_index = sentence.indexOf("and");
+            if(tagged.get(sentence.get(and_index - 1)).equals("NNP") && tagged.get(sentence.get(and_index + 1)).equals("NNP")){
+                String root_sentence = "";
+                String first_sentence = "";
+                String second_sentence = "";
+                System.out.println(and_index + 1);
+                System.out.println(sentence.size());
+                if(and_index + 3 < sentence.size()){                   
+                    for(int i = and_index + 2; i < sentence.size(); i ++){
+                        if(tagged.get(sentence.get(i)).equals("PRP") || tagged.get(sentence.get(i)).equals("PRP$") || tagged.get(sentence.get(i)).equals("PRP")){
+                            continue;
+                        }
+                        root_sentence += sentence.get(i) + " ";
+                    }
+                    root_sentence = root_sentence.substring(0, root_sentence.length() - 1);
+                    first_sentence = sentence.get(and_index - 1) + " " + root_sentence;
+                    sentence_list.add(first_sentence);
+                    second_sentence = sentence.get(and_index + 1) + " " + root_sentence;
+                    sentence_list.add(second_sentence);
+                }
+                else{
+                    for(int i = 0; i < and_index - 1;i++){
+                        if(tagged.get(sentence.get(i)).equals("PRP") || tagged.get(sentence.get(i)).equals("PRP$") || tagged.get(sentence.get(i)).equals("PRP")){
+                            continue;
+                        }
+                        root_sentence += sentence.get(i) + " "; 
+                    }
+                    root_sentence = root_sentence.substring(0, root_sentence.length() - 1);
+                    first_sentence = root_sentence + " " + sentence.get(and_index - 1);
+                    sentence_list.add(first_sentence);
+                    second_sentence = root_sentence + " " + sentence.get(and_index + 1);
+                    sentence_list.add(second_sentence);                 
+                }
+                System.out.println(first_sentence);
+                System.out.println(second_sentence);
+            }
+            
+            if(tagged.get(sentence.get(and_index - 1)).startsWith("VB") && tagged.get(sentence.get(and_index + 1)).startsWith("VB")){
+                String root_sentence = "";
+                String first_sentence = "";
+                String second_sentence = "";
+                System.out.println(and_index + 1);
+                System.out.println(sentence.size());
+                if(and_index + 3 < sentence.size()){                   
+                    for(int i = and_index + 2; i < sentence.size(); i ++){
+                        root_sentence += sentence.get(i) + " ";
+                    }
+                    root_sentence = root_sentence.substring(0, root_sentence.length() - 1);
+                    first_sentence = sentence.get(and_index - 1) + " " + root_sentence;
+                    sentence_list.add(first_sentence);
+                    second_sentence = sentence.get(and_index + 1) + " " + root_sentence;
+                    sentence_list.add(second_sentence);
+                }
+                else{
+                    for(int i = 0; i < and_index - 1;i++){
+                        root_sentence += sentence.get(i) + " "; 
+                    }
+                    root_sentence = root_sentence.substring(0, root_sentence.length() - 1);
+                    first_sentence = root_sentence + " " + sentence.get(and_index - 1);
+                    sentence_list.add(first_sentence);
+                    second_sentence = root_sentence + " " + sentence.get(and_index + 1);
+                    sentence_list.add(second_sentence);                 
+                }               
+                System.out.println(first_sentence);
+                System.out.println(second_sentence);
+            }
+            
+            if(tagged.get(sentence.get(and_index - 1)).equals("NNP") && tagged.get(sentence.get(and_index + 1)).equals("NNP")){
+                
+            }
+        }
+        return sentence_list;
+=======
     public ArrayList<ArrayList<String>> checkOverlap(ArrayList<ArrayList<String>> sentences){
         ArrayList<ArrayList<String>> remove = new ArrayList<>();
         for(ArrayList<String> sent:sentences){
@@ -381,6 +476,7 @@ public class InformationDissemination {
             sentences.remove(temp);
         }
         return sentences;
+>>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
     }
     
     private ArrayList<String> mergeNNP(ArrayList<String> sentence){
@@ -398,6 +494,43 @@ public class InformationDissemination {
             tagged.put(person, "NNP");
             sentence.add(pointer,person);
         }
+<<<<<<< HEAD
+    }
+    
+    private void disseminateInformation(ArrayList<String> sentence_list){
+        //answers
+        //keyword
+        //q_type
+        WordTokenizer tk = new WordTokenizer();
+        for(String sentence:sentence_list){
+            //who
+            String kw = "";
+            for(String word:tk.tokenizer(sentence)){
+                if(tagged.get(word).equals("NNP"))
+                    answers.add(word);
+                else
+                    kw += word + " ";
+            }
+            keyword.add(kw.substring(0,kw.length() - 1));
+            q_type.add("Who");
+            
+            //what
+            kw = "";
+            for(String word:tk.tokenizer(sentence)){
+                if(tagged.get(word).startsWith("VB"))
+                    answers.add(word);
+                else
+                    kw += word;
+            }
+            keyword.add(kw.substring(0,kw.length() - 1));
+            q_type.add("What");
+        
+            
+            //where
+            //why
+        }
+=======
         return sentence;
+>>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
     }
 }

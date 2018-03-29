@@ -1,0 +1,9 @@
+User: The red car belongs to Amir
+The [DT], red [NNP], car [NN], belongs [VBZ], to [TO], Amir [NNP], 
+
+
+User: The red coloured car belongs to AMir
+The [DT], red [NNP], coloured [NN], car [NN], belongs [VBZ], to [TO], AMir [NNP], 
+
+
+

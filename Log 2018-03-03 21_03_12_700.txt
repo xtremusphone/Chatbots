@@ -1,0 +1,9 @@
+User: The red car was Amir's
+The [DT], red [NNP], car [NN], was [VBD], Amir [NNP], 's [POS], 
+
+
+User: Amir ran to school
+Amir [NNP], ran [VBD], to [TO], school [NNP], 
+
+
+

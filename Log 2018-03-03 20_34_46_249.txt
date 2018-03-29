@@ -1,0 +1,13 @@
+User: Amir and Ahmad cleaned the room
+Amir [NNP], and [CC], Ahmad [NNP], cleaned [NN], the [DT], room [NN], 
+
+
+User: The room was cleaned by Amir and Ahmad
+The [DT], room [NN], was [VBD], cleaned [NN], by [IN], Amir [NNP], and [CC], Ahmad [NNP], 
+
+
+User: The living room was cleaned by Amir and Ahmad
+The [DT], living [NN], room [NN], was [VBD], cleaned [NN], by [IN], Amir [NNP], and [CC], Ahmad [NNP], 
+
+
+

@@ -1,0 +1,5 @@
+User: The red coloured car is Amir's
+The [DT], red [NNP], coloured [NN], car [NN], is [VBZ], Amir [NNP], 's [POS], 
+
+
+
