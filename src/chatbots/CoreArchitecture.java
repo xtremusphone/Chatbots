@@ -1,6 +1,5 @@
 package chatbots;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,6 +14,9 @@ public class CoreArchitecture{
     private ArrayList<String> answer = new ArrayList<>();
     private ArrayList<String> keywords = new ArrayList<>();
     private ArrayList<String> mapped_q = new ArrayList<>();
+    private ArrayList<String> root_sent = new ArrayList<>();
+    
+    private TFIDF tfid = new TFIDF();
     
     public CoreArchitecture(){
         
@@ -66,7 +68,8 @@ public class CoreArchitecture{
                         score = temp.get(key_answer);
                     }
                     else if(temp.get(key_answer) == score){
-                        for(String inputs:tagged.keySet()){
+                        for(String inputs:wt.tokenizer(key_answer)){
+                            System.out.println(inputs);
                             if(tagged.get(inputs).startsWith("VB")){
                                 //ArrayList<String> sample = (ArrayList<String>) wt.tokenizer(answer_p);
                                 boolean check_verbs = false;
@@ -77,6 +80,7 @@ public class CoreArchitecture{
                                 }
                                 if(check_verbs == true){
                                     answer_p += " and " + key_answer;
+                                    break;
                                 }
                             }
                         }
@@ -182,10 +186,14 @@ public class CoreArchitecture{
             id.map_q.stream().forEach((x) -> {
                 mapped_q.add(x);
             });
+            id.root_sentence.stream().forEach((x) -> {
+                
+                root_sent.add(x);
+                ArrayList<String> temp = (ArrayList<String>) wt.tokenizer(x);
+                tfid.sentence_list.add(temp);
+                System.out.println(temp.get(0) + " : " + tfid.getCumulativeTFIDF(temp.get(0)));
+            });
             reply += "Bot: Thank you for informing me ;)";
-            System.out.println(answer.toString());
-            System.out.println(keywords.toString());
-            System.out.println(mapped_q);
         }
         return reply;
     }
@@ -219,6 +227,8 @@ public class CoreArchitecture{
                 for(int i = 0;i < keys.size();i++){
                     if(!temp.contains(keys.get(i)))
                         break;
+                    else if(temp.contains(keys.get(i)) && i == keys.size() - 1 && temp.contains("not"))
+                        return "No";
                     else if(temp.contains(keys.get(i)) && i == keys.size() - 1)
                         return "Yes";
                 }
@@ -227,10 +237,10 @@ public class CoreArchitecture{
                 for(int i = 0;i < ans.length;i++){
                     if(!temp.contains(keys.get(i)) && !temp.contains("not"))
                         break;
-                    else if(temp.contains(keys.get(i)) && i == ans.length - 1)
-                        return "Yes";
                     else if(temp.contains(keys.get(i)) && i == ans.length - 1 && temp.contains("not"))
                         return "No";
+                    else if(temp.contains(keys.get(i)) && i == ans.length - 1)
+                        return "Yes";
                 }
             }
         }

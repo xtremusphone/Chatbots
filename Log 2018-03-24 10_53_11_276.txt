@@ -1,0 +1,29 @@
+User: Harry ran away from school
+Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], 
+Bot: Thank you for informing me ;)
+
+User: Harry bought a new cat
+Harry [NNP], bought [VBD], a [DT], new [JJ], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+User: Siti killed Aminah
+Siti [NNP], killed [VBD], Aminah [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Who killed Aminah?
+Who [WP], killed [VBD], Aminah [NNP], ? [.], 
+Bot: Siti
+
+User: Did Siti killed Aminah?
+Did [VBD], Siti [NNP], killed [VBD], Aminah [NNP], ? [.], 
+Bot: Yes
+
+User: Did Aminah killed Siti?
+Did [VBD], Aminah [NNP], killed [VBD], Siti [NNP], ? [.], 
+Bot: Yes
+
+User: Siti bought a big cat
+Siti [NNP], bought [VBD], a [DT], big [JJ], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+

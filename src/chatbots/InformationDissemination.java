@@ -25,6 +25,7 @@ public class InformationDissemination {
     public ArrayList<String> ans = new ArrayList<>();
     public ArrayList<String> keys = new ArrayList<>();
     public ArrayList<String> map_q = new ArrayList<>();
+    public ArrayList<String> root_sentence = new ArrayList<>();
     
     public InformationDissemination(HashMap<String,String> tag,ArrayList<String> sntc){
         tagged = tag;
@@ -155,8 +156,6 @@ public class InformationDissemination {
                 second_sentence = first_sentence + " #BECAUSE " + second_sentence;
                 tagged.put("#BECAUSE", "ST");
                 iterate.remove();
-                System.out.println(first_sentence);
-                System.out.println(second_sentence);
                 iterate.add((ArrayList<String>) tk.tokenizer(first_sentence));
                 iterate.add((ArrayList<String>) tk.tokenizer(second_sentence));
                 while(iterate.hasPrevious()){
@@ -178,8 +177,6 @@ public class InformationDissemination {
                 second_sentence = first_sentence + " #FOR " + second_sentence;
                 tagged.put("#FOR", "ST");
                 iterate.remove();
-                System.out.println(first_sentence);
-                System.out.println(second_sentence);
                 iterate.add((ArrayList<String>) tk.tokenizer(first_sentence));
                 iterate.add((ArrayList<String>) tk.tokenizer(second_sentence));
                 while(iterate.hasPrevious()){
@@ -187,13 +184,19 @@ public class InformationDissemination {
                 }
             }
         }
+        System.out.println("Sentence splitted : " + sentence_list.toString());
         return sentence_list;
     }
     
     public void addInformation(ArrayList<ArrayList<String>> sentences){
         //sentences = checkOverlap(sentences);
         for(ArrayList<String> x:sentences){
-            System.out.println(x.toString());
+            String stitch = "";
+                for(String wrd:x){
+                    stitch += wrd + " ";
+                }
+            stitch = stitch.substring(0,stitch.length() - 1);
+            
             if(x.contains("#WHILE")){
                 int while_index = x.indexOf("#WHILE");
                 String temp = "while ";
@@ -209,6 +212,7 @@ public class InformationDissemination {
                 ans.add(temp);
                 keys.add(temp_key);
                 map_q.add("What");
+                root_sentence.add(stitch);
                 continue;
             }
             
@@ -227,6 +231,7 @@ public class InformationDissemination {
                 ans.add(temp);
                 keys.add(temp_key);
                 map_q.add("Why");
+                root_sentence.add(stitch);
                 continue;
             }
             
@@ -245,6 +250,7 @@ public class InformationDissemination {
                 ans.add(temp);
                 keys.add(temp_key);
                 map_q.add("Why");
+                root_sentence.add(stitch);
                 continue;
             }
             
@@ -276,6 +282,7 @@ public class InformationDissemination {
                 ans.add(second_sentence);
                 keys.add(first_sentence);
                 map_q.add("Where");
+                root_sentence.add(stitch);
             }
             
             if(x.contains("at") || x.contains("on") || x.contains("after") || x.contains("before")){
@@ -311,6 +318,7 @@ public class InformationDissemination {
                 ans.add(second_sentence);
                 keys.add(first_sentence);
                 map_q.add("When");
+                root_sentence.add(stitch);
             }
             
             if(x.contains("by") || x.contains("with")){
@@ -338,6 +346,7 @@ public class InformationDissemination {
                 ans.add(second_sentence);
                 keys.add(first_sentence);
                 map_q.add("How");
+                root_sentence.add(stitch);
             }
             
             ArrayList<String> person_list = new ArrayList<>();
@@ -357,13 +366,16 @@ public class InformationDissemination {
                 ans.add(person);
                 keys.add(temp);
                 map_q.add("Who");
+                root_sentence.add(stitch);
                 ans.add(person);
                 keys.add(temp);
                 map_q.add("What");
+                root_sentence.add(stitch);
                 temp = temp.replace(",", " ");
                 ans.add(temp);
                 keys.add(person);
                 map_q.add("What");
+                root_sentence.add(stitch);
             }
 
         }
