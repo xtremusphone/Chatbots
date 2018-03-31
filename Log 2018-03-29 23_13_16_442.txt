@@ -1,0 +1,9 @@
+User: Harry cleaned the house because Mr Lim told to do so
+Harry [NNP], cleaned [VBD], the [DT], house [NN], because [IN], Mr [NNP], Lim [NNP], told [VBD], to [TO], do [VB], so [RB], 
+Bot: Thank you for informing me ;)
+
+User: Who cleaned the house?
+Who [WP], cleaned [VBD], the [DT], house [NN], ? [.], 
+Bot: cleaned the house #BECAUSE Mr Lim told to do so and Harry and to do so and because Mr Lim told to do so and Mr Lim and cleaned the house and Harry cleaned the house #BECAUSE told to do so
+
+

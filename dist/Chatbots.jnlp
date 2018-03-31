@@ -7,19 +7,12 @@
     <offline-allowed/>
   </information>
   <resources>
+    <jfx:javafx-runtime version="8.0+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="Chatbots.jar" size="20262" download="eager" />
-    <jar href="lib\NLP.jar" size="40658" download="eager" />
-=======
-<<<<<<< HEAD
-    <jar href="Chatbots.jar" size="12123" download="eager" />
-    <jar href="lib/NLP.jar" size="38785" download="eager" />
-=======
-    <jar href="Chatbots.jar" size="18316" download="eager" />
-    <jar href="lib\NLP.jar" size="39603" download="eager" />
->>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
->>>>>>> f3dda7a4d296161857d73c096d2a69475e3049c7
+    <jar href="Chatbots.jar" size="21089" download="eager" />
+    <jar href="lib/NLP.jar" size="42784" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Chatbots" >
     <param name="requiredFXVersion" value="8.0+"/>

@@ -9,7 +9,6 @@ public class QuestionClassification {
         
     }
     
-<<<<<<< HEAD
     public boolean isQuestion(HashMap<String,String> tagged,ArrayList<String> sentence){
         if(isDid(tagged, sentence) || isHow(tagged, sentence) || isWhat(tagged, sentence) || isWhen(tagged, sentence) || isWhere(tagged, sentence) || isWho(tagged, sentence) || isWhy(tagged, sentence))
             return true;
@@ -17,7 +16,6 @@ public class QuestionClassification {
             return false;
     }
     
-=======
     //Who question always ask PERSON
     //[12] who/whom --> PERSON
     //[13] when --> TIME/DATE
@@ -36,7 +34,6 @@ public class QuestionClassification {
     //[26] how many --> NUMBER
     //[27] how long --> LENGTH/DURATION
     //[28] why/for what --> REASON
->>>>>>> f3dda7a4d296161857d73c096d2a69475e3049c7
     public boolean isWho(HashMap<String,String> tagged,ArrayList<String> sentence){
         if(sentence.contains("who") || sentence.contains("Who"))
             return true;

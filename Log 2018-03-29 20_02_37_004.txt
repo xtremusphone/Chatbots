@@ -1,0 +1,17 @@
+User: Amir bought a dog and a cat
+Amir [NNP], bought [VBD], a [DT], dog [NN], and [CC], a [DT], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+User: What did Amir bought?
+What [WP], did [VBD], Amir [NNP], bought [VBD], ? [.], 
+Bot: bought a dog and a cat
+
+User: Harry and Sally ran away from school
+Harry [NNP], and [CC], Sally [NNP], ran [VBD], away [RB], from [IN], school [NN], 
+Bot: Thank you for informing me ;)
+
+User: Who ran away?
+Who [WP], ran [VBD], away [RB], ? [.], 
+Bot: Harry and Sally
+
+

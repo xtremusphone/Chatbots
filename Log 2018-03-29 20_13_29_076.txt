@@ -1,0 +1,9 @@
+User: Harry cleaned the house and Sally mopped the floor
+Harry [NNP], cleaned [VBD], the [DT], house [NN], and [CC], Sally [NNP], mopped [VBD], the [DT], floor [NN], 
+Bot: Thank you for informing me ;)
+
+User: Siti and Harry cleaned the house
+Siti [NNP], and [CC], Harry [NNP], cleaned [VBD], the [DT], house [NN], 
+Bot: Thank you for informing me ;)
+
+

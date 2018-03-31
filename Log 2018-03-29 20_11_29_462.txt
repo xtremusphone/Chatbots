@@ -1,0 +1,33 @@
+User: Harry and Sally ran away from school
+Harry [NNP], and [CC], Sally [NNP], ran [VBD], away [RB], from [IN], school [NN], 
+Bot: Thank you for informing me ;)
+
+User: What did Harry do/
+What [WP], did [VBD], Harry [NNP], do [VBP], / [VBD], 
+Bot: and Sally ran away from school
+
+User: What did Harry do?
+What [WP], did [VBD], Harry [NNP], do [VBP], ? [.], 
+Bot: and Sally ran away from school
+
+User: The house was cleaned by Amir and Sally
+The [DT], house [NN], was [VBD], cleaned [VBD], by [IN], Amir [NNP], and [CC], Sally [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Who cleaned the house?
+Who [WP], cleaned [VBD], the [DT], house [NN], ? [.], 
+Bot: Sally and Amir
+
+User: My name is Amir
+My [PRP$], name [NN], is [VBZ], Amir [NNP], 
+Bot: Thank you for informing me ;)
+
+User: The house was cleaned and mopped by Amir and Sally
+The [DT], house [NN], was [VBD], cleaned [VBD], and [CC], mopped [VBD], by [IN], Amir [NNP], and [CC], Sally [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Harry cleaned the house and Sally mopped the floor
+Harry [NNP], cleaned [VBD], the [DT], house [NN], and [CC], Sally [NNP], mopped [VBD], the [DT], floor [NN], 
+Bot: Thank you for informing me ;)
+
+

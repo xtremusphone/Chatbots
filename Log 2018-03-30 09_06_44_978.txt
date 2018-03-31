@@ -1,0 +1,73 @@
+User: Harry bought a big cat
+Harry [NNP], bought [VBD], a [DT], big [JJ], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+User: Harry did not bought a small cat
+Harry [NNP], did [VBD], not [RB], bought [VBD], a [DT], small [JJ], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+User: What did Harry bought?
+What [WP], did [VBD], Harry [NNP], bought [VBD], ? [.], 
+Bot: bought a big cat
+
+User: What did Harry do?
+What [WP], did [VBD], Harry [NNP], do [VBP], ? [.], 
+Bot: bought a big cat
+
+User: Harry ran away from school because he found it boring
+Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], because [IN], he [PRP], found [VBD], it [PRP], boring [JJ], 
+Bot: Thank you for informing me ;)
+
+User: Who ran away?
+Who [WP], ran [VBD], away [RB], ? [.], 
+Bot: Harry
+
+User: What did Harry do?
+What [WP], did [VBD], Harry [NNP], do [VBP], ? [.], 
+Bot: bought a big cat and ran away from school
+
+User: Did Harry bought a big cat?
+Did [VBD], Harry [NNP], bought [VBD], a [DT], big [JJ], cat [VBD], ? [.], 
+Bot: Yes
+
+User: Did Harry bought a small cat?
+Did [VBD], Harry [NNP], bought [VBD], a [DT], small [JJ], cat [VBD], ? [.], 
+Bot: No
+
+User: Did Harry bought a house?
+Did [VBD], Harry [NNP], bought [VBD], a [DT], house [NN], ? [.], 
+Bot: I am not sure about that
+
+User: Harry slowly walk to the mall
+Harry [NNP], slowly [RB], walk [VB], to [TO], the [DT], mall [NN], 
+Bot: Thank you for informing me ;)
+
+User: Harry quickly run to the mall
+Harry [NNP], quickly [RB], run [VB], to [TO], the [DT], mall [NN], 
+Bot: Thank you for informing me ;)
+
+User: Did Harry go to the mall?
+Did [VBD], Harry [NNP], go [NN], to [TO], the [DT], mall [NN], ? [.], 
+Bot: I am not sure about that
+
+User: Harry did not go to the clinic
+Harry [NNP], did [VBD], not [RB], go [VB], to [TO], the [DT], clinic [NN], 
+Bot: Thank you for informing me ;)
+
+User: Did Harry go to the mall?
+Did [VBD], Harry [NNP], go [NN], to [TO], the [DT], mall [NN], ? [.], 
+Bot: I am not sure about that
+
+User: Did Harry go to the clinic?
+Did [VBD], Harry [NNP], go [NN], to [TO], the [DT], clinic [NN], ? [.], 
+Bot: No
+
+User: Did Harry bought a dog?
+Did [VBD], Harry [NNP], bought [VBD], a [DT], dog [NN], ? [.], 
+Bot: I am not sure about that
+
+User: Did Harry bought a cat?
+Did [VBD], Harry [NNP], bought [VBD], a [DT], cat [VBD], ? [.], 
+Bot: Yes
+
+
