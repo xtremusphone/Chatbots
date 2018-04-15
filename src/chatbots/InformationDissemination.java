@@ -7,17 +7,14 @@ import nlp.Chunker;
 import nlp.WordTokenizer;
 
 public class InformationDissemination {
-    
-<<<<<<< HEAD
+
     private ArrayList<String> answers;
     private ArrayList<String> keyword;
     private ArrayList<String> q_type;
     
-=======
     //ST indicates that the sentence used special token which will be broken down later when it is keyed in to the KNOWLEDGE BASE
     
     private WordTokenizer tk = new WordTokenizer();
->>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
     private HashMap<String,String> tagged;
     private ArrayList<String> sentence;
     private String sentence_build = "";
@@ -32,13 +29,12 @@ public class InformationDissemination {
     public InformationDissemination(HashMap<String,String> tag,ArrayList<String> sntc){
         tagged = tag;
         sentence = sntc;
-<<<<<<< HEAD
         answers = new ArrayList<>();
         keyword = new ArrayList<>();
         q_type = new ArrayList<>();
         for(String x:sentence){
             sentence_build += x + " ";
-=======
+        }
     }
     
     public ArrayList<ArrayList<String>> splitSentenceConnector(){
@@ -379,16 +375,14 @@ public class InformationDissemination {
                 map_q.add("What");
                 root_sentence.add(stitch);
             }
-            
->>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
         }
     }
     
-<<<<<<< HEAD
+    /*
     public ArrayList<String> splitSentence(){
         //splitting sentence
         ArrayList<String> sentence_list = new ArrayList<>();
-        mergeNNP();
+        mergeNNP(sente);
         if(sentence.contains("and")){
             int and_index = sentence.indexOf("and");
             if(tagged.get(sentence.get(and_index - 1)).equals("NNP") && tagged.get(sentence.get(and_index + 1)).equals("NNP")){
@@ -462,7 +456,9 @@ public class InformationDissemination {
             }
         }
         return sentence_list;
-=======
+    }
+    */
+    
     public ArrayList<ArrayList<String>> checkOverlap(ArrayList<ArrayList<String>> sentences){
         ArrayList<ArrayList<String>> remove = new ArrayList<>();
         for(ArrayList<String> sent:sentences){
@@ -476,7 +472,6 @@ public class InformationDissemination {
             sentences.remove(temp);
         }
         return sentences;
->>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
     }
     
     private ArrayList<String> mergeNNP(ArrayList<String> sentence){
@@ -494,7 +489,7 @@ public class InformationDissemination {
             tagged.put(person, "NNP");
             sentence.add(pointer,person);
         }
-<<<<<<< HEAD
+        return sentence;
     }
     
     private void disseminateInformation(ArrayList<String> sentence_list){
@@ -529,8 +524,5 @@ public class InformationDissemination {
             //where
             //why
         }
-=======
-        return sentence;
->>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
     }
 }

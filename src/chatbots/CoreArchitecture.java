@@ -206,15 +206,15 @@ public class CoreArchitecture{
         if(keys.contains("?"))
             keys.remove("?");
         
+        
+        
         System.out.println("");
         ArrayList<String> ans_cand = new ArrayList<>();
         ArrayList<Integer> candidate = new ArrayList<>();
-        for(String ans:answer){
+        for(String ans:root_sent){
             for(String kys:keys){
                 if(ans.contains(kys)){
-                    candidate.add(answer.indexOf(ans));
-                    String temp = keywords.get(answer.indexOf(ans)).replace(",", " ");
-                    ans_cand.add(ans + " " + temp);
+                    ans_cand.add(ans);
                 }
             }
         }
@@ -229,42 +229,58 @@ public class CoreArchitecture{
                         break;
                     else if(temp.contains(keys.get(i)) && i == keys.size() - 1 && temp.contains("not"))
                         return "No";
-                    else if(temp.contains(keys.get(i)) && i == keys.size() - 1)
-                        return "Yes";
+                    else if(temp.contains(keys.get(i)) && i == keys.size() - 1){
+                        if(tags.containsValue("NNP") || tags.containsValue("NN")){
+                            ViterbiAlgorithm tmp_tag = new ViterbiAlgorithm();
+                            HashMap<String,String> ans_tags = tmp_tag.getPOSTagging(answers);
+                            for(String ans_keys:temp){
+                                if(ans_tags.get(ans_keys).startsWith("NN")){
+                                    for(String q_keys:keys){
+                                        if(tags.get(q_keys).startsWith("NN")){
+                                            if(ans_keys.equalsIgnoreCase(q_keys))
+                                                return "Yes";
+                                            else
+                                                return "No";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                            return "Yes";
+                    }
                 }
             }
             else{
-                for(int i = 0;i < ans.length;i++){
-                    if(!temp.contains(keys.get(i)) && !temp.contains("not"))
+                for(int i = 0;i < temp.size();i++){
+                    if(!temp.contains(keys.get(i)))
                         break;
-                    else if(temp.contains(keys.get(i)) && i == ans.length - 1 && temp.contains("not"))
+                    else if(temp.contains(keys.get(i)) && i == keys.size() - 1 && temp.contains("not"))
                         return "No";
-                    else if(temp.contains(keys.get(i)) && i == ans.length - 1)
-                        return "Yes";
+                    else if(temp.contains(keys.get(i)) && i == keys.size() - 1){
+                        if(tags.containsValue("NNP") || tags.containsValue("NN")){
+                            ViterbiAlgorithm tmp_tag = new ViterbiAlgorithm();
+                            HashMap<String,String> ans_tags = tmp_tag.getPOSTagging(answers);
+                            for(String ans_keys:temp){
+                                if(ans_tags.get(ans_keys).startsWith("NN")){
+                                    for(String q_keys:keys){
+                                        if(tags.get(q_keys).startsWith("NN")){
+                                            if(ans_keys.equalsIgnoreCase(q_keys))
+                                                return "Yes";
+                                            else
+                                                return "No";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                            return "Yes";
+                    }
                 }
             }
         }
         return "I am not sure about that";
-        
-        /*
-        System.out.println("Keywords " + candidate.size());
-        System.out.println(candidate.toString());
-        for(int i = 0; i < candidate.size(); i++){
-            System.out.println(candidate.get(i) + " :" + keywords.get(candidate.get(i)));
-            String[] temps = keywords.get(candidate.get(i)).split(",");
-            ArrayList<String> word_list = new ArrayList<>(Arrays.asList(temps));
-            for(String wrd:word_list){
-                if(!keys.contains(wrd))
-                    break;
-                if(keys.contains(wrd) && !tags.get(wrd).equals("TO") && !tags.get(wrd).equals("DT") && !tags.get(wrd).equals("IN") 
-                && !wrd.equalsIgnoreCase("is") && !wrd.equalsIgnoreCase("are") && !wrd.equalsIgnoreCase("was") && 
-                !wrd.equalsIgnoreCase("were") && !wrd.equalsIgnoreCase("has") && !wrd.equalsIgnoreCase("have") && !wrd.equalsIgnoreCase("had") && !keys.contains("not") ){
-                    return "Yes";
-                }
-            }
-            
-        }
-        return "No";*/
     }
     
     public HashMap<String,Double> getReply(String question_type,ArrayList<String> keys){

@@ -7,12 +7,9 @@
     <offline-allowed/>
   </information>
   <resources>
-    <jfx:javafx-runtime version="8.0+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
-  </resources>
-  <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Chatbots.jar" size="11876" download="eager" />
-    <jar href="lib/NLP.jar" size="37909" download="eager" />
+    <jar href="Chatbots.jar" size="20751" download="eager" />
+    <jar href="lib\NLP.jar" size="40846" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Chatbots" >
     <param name="requiredFXVersion" value="8.0+"/>

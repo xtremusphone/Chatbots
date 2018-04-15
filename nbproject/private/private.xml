@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/InformationDissemination.java</file>
-            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/CoreArchitecture.java</file>
-            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/QuestionClassification.java</file>
-            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/Chatbots.java</file>
-            <file>file:/C:/Users/Amir/Documents/GitHub/Chatbots/src/chatbots/FXMLDocumentController.java</file>
-=======
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/CoreArchitecture.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/QuestionClassification.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/Chatbots.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/TFIDF.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Chatbots/src/chatbots/InformationDissemination.java</file>
->>>>>>> e538123cf86f6ff3a1c7eeaa68169767fab2f0a7
-        </group>
-    </open-files>
 </project-private>

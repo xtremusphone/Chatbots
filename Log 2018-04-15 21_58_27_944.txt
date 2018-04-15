@@ -1,0 +1,17 @@
+User: Sara killed Siti
+Sara [NNP], killed [VBD], Siti [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Who killed Siti?
+Who [WP], killed [VBD], Siti [NNP], ? [.], 
+Bot: Sara
+
+User: Did Sara killed Siti
+Did [VBD], Sara [NNP], killed [VBD], Siti [NNP], 
+Bot: Yes
+
+User: Did Siti killed Sara?
+Did [VBD], Siti [NNP], killed [VBD], Sara [NNP], ? [.], 
+Bot: No
+
+
