@@ -1,0 +1,21 @@
+User: Harry ran away
+Harry [NNP], ran [VBD], away [RB], 
+Bot: Thank you for informing me ;)
+
+User: What did Harry do?
+What [WP], did [VBD], Harry [NNP], do [VBP], ? [.], 
+Bot: ran away
+
+User: My name is AMir
+My [PRP$], name [NN], is [VBZ], AMir [NNP], 
+Bot: Thank you for informing me ;)
+
+User: What is my name
+What [WP], is [VBZ], my [PRP$], name [NN], 
+Bot:  and ran away
+
+User: What is my name
+What [WP], is [VBZ], my [PRP$], name [NN], 
+Bot:  and ran away
+
+

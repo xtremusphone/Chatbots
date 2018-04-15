@@ -57,6 +57,10 @@ public class FXMLDocumentController implements Initializable {
 
     private void onEnter(){
         tokenizer = new WordTokenizer();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
         chatLogs += "User: "+ inputField.getText() + "\n" + core.botReply(inputField.getText()) + "\n\n";
         SimpleDateFormat time_formatter = new SimpleDateFormat("HH:mm:ss");
         String current_time_str = time_formatter.format(System.currentTimeMillis());

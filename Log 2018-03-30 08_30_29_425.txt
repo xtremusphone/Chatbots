@@ -1,0 +1,13 @@
+User: Harry bought a big cat
+Harry [NNP], bought [VBD], a [DT], big [JJ], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+User: Harry did not bought a small cat
+Harry [NNP], did [VBD], not [RB], bought [VBD], a [DT], small [JJ], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+User: What did Harry bought?
+What [WP], did [VBD], Harry [NNP], bought [VBD], ? [.], 
+Bot: did not bought a small cat
+
+

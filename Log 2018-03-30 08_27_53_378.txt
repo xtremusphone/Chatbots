@@ -1,0 +1,45 @@
+User: What is a cat?
+What [WP], is [VBZ], a [DT], cat [VBD], ? [.], 
+Bot: I am sorry but I don't recall anything about that in my mind.
+
+User: A cat is a feline
+A [DT], cat [VBD], is [VBZ], a [DT], feline [VBD], 
+Bot: Thank you for informing me ;)
+
+User: What is a cat?
+What [WP], is [VBZ], a [DT], cat [VBD], ? [.], 
+Bot: A cat is a feline
+
+User: Harry ran away from school
+Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], 
+Bot: Thank you for informing me ;)
+
+User: What did Harry do?
+What [WP], did [VBD], Harry [NNP], do [VBP], ? [.], 
+Bot: ran away from school
+
+User: Who ran away from school?
+Who [WP], ran [VBD], away [RB], from [IN], school [NN], ? [.], 
+Bot: Harry
+
+User: Harry bought a big cat
+Harry [NNP], bought [VBD], a [DT], big [JJ], cat [VBD], 
+Bot: Thank you for informing me ;)
+
+User: Harry did not bought a dog
+Harry [NNP], did [VBD], not [RB], bought [VBD], a [DT], dog [NN], 
+Bot: Thank you for informing me ;)
+
+User: What did Harry bought?
+What [WP], did [VBD], Harry [NNP], bought [VBD], ? [.], 
+Bot: did not bought a dog
+
+User: What did Harry do?
+What [WP], did [VBD], Harry [NNP], do [VBP], ? [.], 
+Bot: did not bought a dog
+
+User: Is a cat a feline?
+Is [VBZ], a [DT], cat [VBD], a [DT], feline [VBD], ? [.], 
+Bot: 
+
+

@@ -11,13 +11,8 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="Chatbots.jar" size="20779" download="eager" />
-    <jar href="lib\NLP.jar" size="40846" download="eager" />
-=======
     <jar href="Chatbots.jar" size="21089" download="eager" />
     <jar href="lib/NLP.jar" size="42784" download="eager" />
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Chatbots" >
     <param name="requiredFXVersion" value="8.0+"/>
