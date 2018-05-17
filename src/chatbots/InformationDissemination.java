@@ -7,19 +7,9 @@ import nlp.Chunker;
 import nlp.WordTokenizer;
 
 public class InformationDissemination {
-<<<<<<< HEAD
-=======
-    
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
-
     private ArrayList<String> answers;
     private ArrayList<String> keyword;
     private ArrayList<String> q_type;
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
     //ST indicates that the sentence used special token which will be broken down later when it is keyed in to the KNOWLEDGE BASE
     
     private WordTokenizer tk = new WordTokenizer();
@@ -37,10 +27,6 @@ public class InformationDissemination {
     public InformationDissemination(HashMap<String,String> tag,ArrayList<String> sntc){
         tagged = tag;
         sentence = sntc;
-<<<<<<< HEAD
-=======
-        
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
         answers = new ArrayList<>();
         keyword = new ArrayList<>();
         q_type = new ArrayList<>();
@@ -200,9 +186,7 @@ public class InformationDissemination {
         return sentence_list;
     }
     
-    public void addInformation(ArrayList<ArrayList<String>> sentences){
-        //sentences = checkOverlap(sentences);
-
+    public void addInformation(ArrayList<ArrayList<String>> sentences,String extras){
         for(ArrayList<String> x:sentences){
             boolean flag_unknown = true;
             String stitch = "";
@@ -213,7 +197,7 @@ public class InformationDissemination {
             
             if(x.contains("#WHILE")){
                 int while_index = x.indexOf("#WHILE");
-                String temp = "while ";
+                String temp = "";
                 for(int i = while_index + 1; i < x.size();i++){
                     temp += x.get(i) + " ";
                 }
@@ -224,7 +208,37 @@ public class InformationDissemination {
                 }
                 temp_key = temp_key.substring(0,temp_key.length()- 1);
                 ans.add(temp);
-                keys.add(temp_key);
+                keys.add(temp_key + extras);
+                map_q.add("What");
+                root_sentence.add(stitch);
+                
+                String temp_keys2 = "";
+                ArrayList<Integer> ans_pos = new ArrayList<>();
+                
+                String temp_ans2 = "";
+                boolean verb_flag = false;
+                for(int i = 0; i < x.indexOf("#WHILE");i++){
+                    if(tagged.get(x.get(i)).startsWith("VB") && !x.get(i).equalsIgnoreCase("is") && !x.get(i).equalsIgnoreCase("are") && !x.get(i).equalsIgnoreCase("was") && !x.get(i).equalsIgnoreCase("were") && !x.get(i).equalsIgnoreCase("has") && !x.get(i).equalsIgnoreCase("have") && !x.get(i).equalsIgnoreCase("had")){
+                        verb_flag = true;
+                        ans_pos.add(i);
+                        temp_ans2 += x.get(i) + " ";
+                    }
+                    else if(verb_flag == true){
+                        ans_pos.add(i);
+                        temp_ans2 += x.get(i) + " ";
+                    }
+                }
+                
+                temp_ans2 = temp_ans2.substring(0,temp_ans2.length() - 1);
+                
+                for(int i = 0; i < x.size();i++){
+                    if(!ans_pos.contains(i))
+                        temp_keys2 += x.get(i) + ",";
+                }
+                
+                temp_keys2 = temp_keys2.substring(0,temp_keys2.length() - 1);
+                ans.add(temp_ans2);
+                keys.add(temp_keys2 + extras);
                 map_q.add("What");
                 root_sentence.add(stitch);
                 continue;
@@ -243,11 +257,20 @@ public class InformationDissemination {
                 }
                 temp_key = temp_key.substring(0,temp_key.length()- 1);
                 ans.add(temp);
-                keys.add(temp_key);
+                keys.add(temp_key + extras);
                 map_q.add("Why");
                 root_sentence.add(stitch);
                 flag_unknown = false;
-                //continue;
+                
+                ArrayList<ArrayList<String>> tempArr = new ArrayList<>();
+                ArrayList<String> tempStr = new ArrayList<>();
+                for(int i = because_index + 1; i <x.size();i++){
+                    tempStr.add(x.get(i));
+                }
+                tempArr.add(tempStr);
+                addInformation(tempArr, "," + temp_key);
+                
+                continue;
             }
             
             if(x.contains("#FOR")){
@@ -263,11 +286,20 @@ public class InformationDissemination {
                 }
                 temp_key = temp_key.substring(0,temp_key.length()- 1);
                 ans.add(temp);
-                keys.add(temp_key);
+                keys.add(temp_key + extras);
                 map_q.add("Why");
                 root_sentence.add(stitch);
                 flag_unknown = false;
-                //continue;
+                
+                ArrayList<ArrayList<String>> tempArr = new ArrayList<>();
+                ArrayList<String> tempStr = new ArrayList<>();
+                for(int i = while_index + 1; i <x.size();i++){
+                    tempStr.add(x.get(i));
+                }
+                tempArr.add(tempStr);
+                addInformation(tempArr, "," + temp_key);
+                
+                continue;
             }
             
             if(x.contains("from") || x.contains("to") || x.contains("in")){
@@ -296,7 +328,7 @@ public class InformationDissemination {
                 }
                 second_sentence = second_sentence.substring(0,second_sentence.length() - 1);
                 ans.add(second_sentence);
-                keys.add(first_sentence);
+                keys.add(first_sentence + extras);
                 map_q.add("Where");
                 root_sentence.add(stitch);
                 flag_unknown = false;
@@ -333,8 +365,8 @@ public class InformationDissemination {
                 }
                 second_sentence = second_sentence.substring(0,second_sentence.length() - 1);
                 ans.add(second_sentence);
-                keys.add(first_sentence);
-                map_q.add("When");
+                keys.add(first_sentence + extras);
+            map_q.add("When");
                 root_sentence.add(stitch);
                 flag_unknown = false;
             }
@@ -362,7 +394,7 @@ public class InformationDissemination {
                 }
                 second_sentence = second_sentence.substring(0,second_sentence.length() - 1);
                 ans.add(second_sentence);
-                keys.add(first_sentence);
+                keys.add(first_sentence + extras);
                 map_q.add("How");
                 root_sentence.add(stitch);
                 flag_unknown = false;
@@ -370,7 +402,7 @@ public class InformationDissemination {
             
             ArrayList<String> person_list = new ArrayList<>();
             for(String person:x){
-                if(tagged.get(person).startsWith("NNP")){
+                if(tagged.get(person).startsWith("NN")){
                     person_list.add(person);
                 }
             }
@@ -383,76 +415,23 @@ public class InformationDissemination {
                 }
                 temp = temp.substring(0,temp.length() - 1);
                 ans.add(person);
-                keys.add(temp);
+                keys.add(temp + extras);
                 map_q.add("Who");
                 root_sentence.add(stitch);
                 ans.add(person);
-                keys.add(temp);
+                keys.add(temp + extras);
                 map_q.add("What");
                 root_sentence.add(stitch);
                 temp = temp.replace(",", " ");
                 ans.add(temp);
-                keys.add(person);
+                keys.add(person + extras);
                 map_q.add("What");
                 root_sentence.add(stitch);
                 flag_unknown = false;
             }
-<<<<<<< HEAD
         }
     }
     
-    /*
-    public ArrayList<String> splitSentence(){
-        //splitting sentence
-        ArrayList<String> sentence_list = new ArrayList<>();
-        mergeNNP(sente);
-        if(sentence.contains("and")){
-            int and_index = sentence.indexOf("and");
-            if(tagged.get(sentence.get(and_index - 1)).equals("NNP") && tagged.get(sentence.get(and_index + 1)).equals("NNP")){
-                String root_sentence = "";
-                String first_sentence = "";
-                String second_sentence = "";
-                System.out.println(and_index + 1);
-                System.out.println(sentence.size());
-                if(and_index + 3 < sentence.size()){                   
-                    for(int i = and_index + 2; i < sentence.size(); i ++){
-                        if(tagged.get(sentence.get(i)).equals("PRP") || tagged.get(sentence.get(i)).equals("PRP$") || tagged.get(sentence.get(i)).equals("PRP")){
-                            continue;
-                        }
-                        root_sentence += sentence.get(i) + " ";
-                    }
-                    root_sentence = root_sentence.substring(0, root_sentence.length() - 1);
-                    first_sentence = sentence.get(and_index - 1) + " " + root_sentence;
-                    sentence_list.add(first_sentence);
-                    second_sentence = sentence.get(and_index + 1) + " " + root_sentence;
-                    sentence_list.add(second_sentence);
-=======
-            
-            if(flag_unknown){
-                String answ = "";
-                for(int i = 0; i < x.size();i++){
-                    answ += x.get(i) + " ";
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
-                }
-                answ = answ.substring(0,answ.length() - 1);
-                ans.add(answ);
-                keys.add(answ.replace(" ", ","));
-                map_q.add("What");
-                root_sentence.add(answ);
-            }
-            
-            ArrayList<String> phrases = new ArrayList<>();
-            
-        }
-<<<<<<< HEAD
-        return sentence_list;
-    }
-    */
-    
-=======
-    }
-
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
     public ArrayList<ArrayList<String>> checkOverlap(ArrayList<ArrayList<String>> sentences){
         ArrayList<ArrayList<String>> remove = new ArrayList<>();
         for(ArrayList<String> sent:sentences){
@@ -501,9 +480,6 @@ public class InformationDissemination {
             tagged.put(phrase, "NNP");
             sentence.add(pointer,phrase);
         }
-<<<<<<< HEAD
-=======
         return sentence;
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
     }
 }

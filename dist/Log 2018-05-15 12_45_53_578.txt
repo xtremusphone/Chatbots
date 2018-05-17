@@ -1,0 +1,11 @@
+User: Who ran away
+Bot: I am sorry but I don't recall anything about that in my mind.
+
+User: Harry ran away from school
+Harry [NNP], ran [NN], away [NN], from [NN], school [NN], 
+Bot: Thank you for informing me ;)
+
+User: Who ran away
+Bot: Harry
+
+

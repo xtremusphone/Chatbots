@@ -34,6 +34,7 @@ public class QuestionClassification {
     //[26] how many --> NUMBER
     //[27] how long --> LENGTH/DURATION
     //[28] why/for what --> REASON
+    
     public boolean isWho(HashMap<String,String> tagged,ArrayList<String> sentence){
         if(sentence.contains("who") || sentence.contains("Who"))
             return true;

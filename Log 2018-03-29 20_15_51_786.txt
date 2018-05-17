@@ -1,5 +1,0 @@
-User: Siti cleaned the house and Amir mopped the floor
-Siti [NNP], cleaned [VBD], the [DT], house [NN], and [CC], Amir [NNP], mopped [VBD], the [DT], floor [NN], 
-Bot: Thank you for informing me ;)
-
-

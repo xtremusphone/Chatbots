@@ -1,5 +1,6 @@
 package chatbots;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,13 +9,14 @@ import nlp.ViterbiAlgorithm;
 import nlp.WordTokenizer;
 import nlp.Chunker;
 
-public class CoreArchitecture{
+public class CoreArchitecture implements Serializable{
     
     private ViterbiAlgorithm va = new ViterbiAlgorithm();
-    private ArrayList<String> answer = new ArrayList<>();
+    public ArrayList<String> answer = new ArrayList<>();
     private ArrayList<String> keywords = new ArrayList<>();
     private ArrayList<String> mapped_q = new ArrayList<>();
     private ArrayList<String> root_sent = new ArrayList<>();
+    private ViterbiAlgorithm tmp_tag = new ViterbiAlgorithm();
     
     private TFIDF tfid = new TFIDF();
     private WordTokenizer w_tokenizer = new WordTokenizer();
@@ -29,12 +31,26 @@ public class CoreArchitecture{
         WordTokenizer wt = new WordTokenizer();
         Chunker ch = new Chunker();
         List<String> tokenized = wt.tokenizer(input);
-        for(String word : tokenized){
-            reply += word + " [" + tagged.get(word) + "], ";
-        }
-        reply += "\n";
         QuestionClassification qc = new QuestionClassification();
         if(tokenized.contains("?") || containsQuestion((ArrayList<String>) tokenized)){
+            if(tokenized.contains("and") && tagged.get(tokenized.get(tokenized.indexOf("and") + 1)).startsWith("W")){
+            int and_index = tokenized.indexOf("and");
+            String temp1 = "";
+            for(int i = 0; i < and_index;i++){
+                temp1 += tokenized.get(i) + " ";
+            }
+            temp1 = temp1.substring(0,temp1.length() - 1);
+            System.out.println("First sent:" + temp1);
+            String ans1 = botReply(temp1).replace("Bot: ", " ");
+            String temp2 = "";
+            for(int i = and_index + 1; i < tokenized.size();i++){
+                temp2 += tokenized.get(i) + " ";
+            }
+            temp2 = temp2.substring(0,temp2.length() - 1);
+            System.out.println("Second sent:" + temp2);
+            String ans2 = botReply(temp2).replace("Bot: ", " ");
+            return "Bot: " + ans1 + " and " + ans2;
+            }
             reply += "Bot: ";
             if(qc.isHow(tagged, (ArrayList<String>) tokenized)){
                 HashMap<String,Double> temp = getReply("How", (ArrayList<String>) tokenized);
@@ -113,6 +129,8 @@ public class CoreArchitecture{
                 
                 
                 reply += answer_p;
+                if(answer_p.equals(""))
+                    reply += "I am not sure about that";
                 }
                 System.out.println(temp.toString());
             }
@@ -183,13 +201,38 @@ public class CoreArchitecture{
                 else{
                 String answer_p = "";
                 double score = 0;
+                //need to check if there is NNP and Verb
                 for(String key_answer:temp.keySet()){
                     if(temp.get(key_answer) > score){
-                        answer_p = key_answer;
-                        score = temp.get(key_answer);
+                        String check = root_sent.get(answer.indexOf(key_answer));
+                        HashMap<String,String> tg = va.getPOSTagging(check);
+                        if(tg.containsValue("NNP")){
+                            for(String ck:w_tokenizer.tokenizer(check)){
+                                if(tg.get(ck).equals("NNP") && ck.equals(key_answer)){
+                                    answer_p = key_answer;
+                                    score = temp.get(key_answer);
+                                    break;
+                                }
+                            }
+                        }
+                        else{
+                            answer_p = key_answer;
+                            score = temp.get(key_answer);
+                        }
                     }
                     else if(temp.get(key_answer) == score){
-                        answer_p += " and " + key_answer;
+                        String check = root_sent.get(answer.indexOf(key_answer));
+                        HashMap<String,String> tg = va.getPOSTagging(check);
+                        if(tg.containsValue("NNP")){
+                            for(String ck:w_tokenizer.tokenizer(check)){
+                                if(tg.get(ck).equals("NNP") && !answer_p.contains(key_answer) && ck.equals(key_answer)){
+                                    answer_p += " and " + key_answer;
+                                    score = temp.get(key_answer);
+                                    break;
+                                }
+                            }
+                        }
+                        //answer_p += " and " + key_answer;
                     }
                 }
                 reply += answer_p;
@@ -201,23 +244,28 @@ public class CoreArchitecture{
             }
         }
         else{
+            for(String word : tokenized){
+            reply += word + " [" + tagged.get(word) + "], ";
+            }
+            reply += "\n";
             InformationDissemination id = new InformationDissemination(tagged, (ArrayList<String>) tokenized);
-            id.addInformation(id.splitSentenceConnector());
+            id.addInformation(id.splitSentenceConnector(),"");
             id.ans.stream().forEach((x) -> {
                 answer.add(x);
             });
             id.keys.stream().forEach((x) -> {
                 
                 keywords.add(x);
+                System.out.println(answer.get(keywords.indexOf(x)) + " :: "+ x );
             });
             id.map_q.stream().forEach((x) -> {
                 mapped_q.add(x);
+                System.out.println(x);
             });
             id.root_sentence.stream().forEach((x) -> {
                 root_sent.add(x);
                 ArrayList<String> temp = (ArrayList<String>) wt.tokenizer(x);
                 tfid.sentence_list.add(temp);
-                System.out.println(temp.get(0) + " : " + tfid.getCumulativeTFIDF(temp.get(0)));
             });
             reply += "Bot: Thank you for informing me ;)";
         }
@@ -247,11 +295,14 @@ public class CoreArchitecture{
             }
         }
         
+        boolean ans_flag = false;
+        String ans_buffer = "";
         for(String answers:ans_cand){
             String[] ans = answers.split(" ");
             ArrayList<String> temp = new ArrayList<>(Arrays.asList(ans));
             System.out.println(answers);
             if(keys.size() < ans.length){
+                
                 for(int i = 0;i < keys.size();i++){
                     if(!temp.contains(keys.get(i)))
                         break;
@@ -259,19 +310,25 @@ public class CoreArchitecture{
                         return "No";
                     else if(temp.contains(keys.get(i)) && i == keys.size() - 1){
                         if(tags.containsValue("NNP") || tags.containsValue("NN")){
-                            ViterbiAlgorithm tmp_tag = new ViterbiAlgorithm();
                             HashMap<String,String> ans_tags = tmp_tag.getPOSTagging(answers);
                             for(String ans_keys:temp){
                                 if(ans_tags.get(ans_keys).startsWith("NN")){
                                     for(String q_keys:keys){
                                         if(tags.get(q_keys).startsWith("NN")){
-                                            if(ans_keys.equalsIgnoreCase(q_keys))
+                                            if(ans_keys.equalsIgnoreCase(q_keys)){
+                                                System.out.println("definit:" + temp + " " + keys);
+                                                System.out.println("Fired from 1st");
                                                 return "Yes";
-                                            else
-                                                return "No";
+                                            }
+                                            else{
+                                                ans_flag = true;
+                                                ans_buffer = "No";
+                                                break;
+                                            }
                                         }
                                     }
                                 }
+                                return "No";
                             }
                         }
                         else
@@ -283,26 +340,28 @@ public class CoreArchitecture{
                 for(int i = 0;i < temp.size();i++){
                     if(!temp.contains(keys.get(i)))
                         break;
-<<<<<<< HEAD
-                    else if(temp.contains(keys.get(i)) && i == keys.size() - 1 && temp.contains("not"))
-=======
                     else if(temp.contains(keys.get(i)) && i == ans.length - 1 && checkNegative(temp))
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
                         return "No";
                     else if(temp.contains(keys.get(i)) && i == keys.size() - 1){
                         if(tags.containsValue("NNP") || tags.containsValue("NN")){
-                            ViterbiAlgorithm tmp_tag = new ViterbiAlgorithm();
+                            
                             HashMap<String,String> ans_tags = tmp_tag.getPOSTagging(answers);
                             for(String ans_keys:temp){
                                 if(ans_tags.get(ans_keys).startsWith("NN")){
                                     for(String q_keys:keys){
                                         if(tags.get(q_keys).startsWith("NN")){
-                                            if(ans_keys.equalsIgnoreCase(q_keys))
+                                            if(ans_keys.equalsIgnoreCase(q_keys)){
+                                                System.out.println("Fired from 2nd");
                                                 return "Yes";
-                                            else
-                                                return "No";
+                                            }
+                                            else{
+                                                ans_flag = true;
+                                                ans_buffer = "No";
+                                                break;
+                                            }
                                         }
                                     }
+                                    break;
                                 }
                             }
                         }
@@ -312,6 +371,8 @@ public class CoreArchitecture{
                 }
             }
         }
+        if(ans_flag)
+            return ans_buffer;
         return "I am not sure about that";
     }
     
@@ -354,6 +415,7 @@ public class CoreArchitecture{
         
         for(int i = 0; i < mapped_q.size();i++){
             if(mapped_q.get(i).equals(question_type)){
+                System.out.println(i);
                 candidate.add(i);
             }
         }
@@ -379,7 +441,6 @@ public class CoreArchitecture{
                     }
                 }
             }
-            System.out.println("");
             
             
             if(question_type.equalsIgnoreCase("What")){
@@ -402,11 +463,10 @@ public class CoreArchitecture{
             }
             
             if(score != 0){
-                max.put(answer.get(x), score);
+                max.put(answer.get(x), score / keywords.get(x).length());
             }
         }
        
-        
         return max;
     }
     
@@ -426,6 +486,8 @@ public class CoreArchitecture{
         if(tokens.contains("what") || tokens.contains("What"))
             return true;
         if(tokens.get(0).equalsIgnoreCase("did"))
+            return true;
+        if(tokens.get(tokens.size() - 1).equals("?"))
             return true;
         return false;
     }

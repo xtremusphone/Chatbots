@@ -1,5 +1,0 @@
-User: the living room
-the [DT], living [NN], room [NN], 
-
-
-

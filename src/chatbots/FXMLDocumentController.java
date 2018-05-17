@@ -6,10 +6,17 @@
 package chatbots;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,7 +45,7 @@ public class FXMLDocumentController implements Initializable {
     
     private WordTokenizer tokenizer;
    
-    private CoreArchitecture core = new CoreArchitecture();
+    private CoreArchitecture core;
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -52,19 +59,27 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try{
+            ObjectInputStream read = new ObjectInputStream(new FileInputStream("Knowledge Base.dt"));
+            this.core = (CoreArchitecture) read.readObject();
+            System.out.println("Knowledge Base loaded..." + this.core.answer.get(0));
+        }
+        catch(IOException e){
+            System.out.println("No Knowledge Base found...");
+            this.core = new CoreArchitecture();
+            core.botReply("Your creator is Amir");
+            core.botReply("You are Xtremus Bot");
+        }
+        catch (ClassNotFoundException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void onEnter(){
         tokenizer = new WordTokenizer();
-<<<<<<< HEAD
-=======
-
->>>>>>> 5c4a8339bad1bf4fbbbde423275fa7638d21800c
         chatLogs += "User: "+ inputField.getText() + "\n" + core.botReply(inputField.getText()) + "\n\n";
         SimpleDateFormat time_formatter = new SimpleDateFormat("HH:mm:ss");
         String current_time_str = time_formatter.format(System.currentTimeMillis());
-        //chatLogs += "[" + current_time_str + "] User: "+ inputField.getText() + "\n" + tokenizer.tokenizer(inputField.getText()) + "\n\n";
         chatWindow.setText(chatLogs);
         inputField.setText("");
     }
@@ -78,6 +93,17 @@ public class FXMLDocumentController implements Initializable {
             wrt.close();
         } catch (Exception e) {
             System.out.println("Unable to file to path");
+        }
+    }
+    
+    public void saveDatabase(){
+        try{
+            ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream("Knowledge Base.dt"));
+            writer.writeObject(core);
+            writer.close();
+            System.out.println("Database saved successfully...");
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

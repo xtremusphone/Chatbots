@@ -1,9 +1,0 @@
-User: Sara killed Siti
-Sara [NNP], killed [VBD], Siti [NNP], 
-Bot: Thank you for informing me ;)
-
-User: Did Siti killed Sara?
-Did [VBD], Siti [NNP], killed [VBD], Sara [NNP], ? [.], 
-Bot: Yes
-
-

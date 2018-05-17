@@ -1,0 +1,38 @@
+User: Harry and Siti cleaned and mopped the house because Mr Lim told
+Harry [NNP], and [CC], Siti [NNP], cleaned [VBD], and [CC], mopped [VBD], the [DT], house [NN], because [IN], Mr [NNP], Lim [NNP], told [VBD], 
+Bot: Thank you for informing me ;)
+
+User: Who cleaned the house?
+Bot: Harry and Siti
+
+User: What did Harry do?
+Bot: mopped the house and cleaned the house
+
+User: Why did Harry cleaned the house
+Bot: because Mr Lim told
+
+User: Siti killed Harry
+Siti [NNP], killed [VBD], Harry [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Did Siti killed Harry
+Bot: Yes
+
+User: Did Harry killed Siti
+Bot: No
+
+User: Siti love Harry and Harry love Siti
+Siti [NNP], love [NN], Harry [NNP], and [CC], Harry [NNP], love [NN], Siti [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Siti love Harry
+Siti [NNP], love [NN], Harry [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Siti love Harry?
+Bot: Yes
+
+User: Harry love Siti?
+Bot: No
+
+

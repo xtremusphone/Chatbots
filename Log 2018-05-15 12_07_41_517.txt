@@ -1,0 +1,28 @@
+User: Siti love Harry
+Siti [NNP], love [NN], Harry [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Harry love Siti
+Harry [NNP], love [NN], Siti [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Harry love Siti?
+Bot: Yes
+
+User: Siti love Harry?
+Bot: Yes
+
+User: Harry ran away from school because he wanted to go home
+Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], because [IN], he [PRP], wanted [VBD], to [TO], go [VB], home [NN], 
+Bot: Thank you for informing me ;)
+
+User: Who ran away
+Bot: Harry
+
+User: Did Harry run away
+Bot: I am not sure about that
+
+User: Why did Harry run away
+Bot: because he wanted to go home
+
+

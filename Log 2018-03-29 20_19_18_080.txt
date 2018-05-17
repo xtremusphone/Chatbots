@@ -1,5 +1,0 @@
-User: Harry and Sally ran away from school
-Harry [NNP], and [CC], Sally [NNP], ran [VBD], away [RB], from [IN], school [NN], 
-Bot: Thank you for informing me ;)
-
-

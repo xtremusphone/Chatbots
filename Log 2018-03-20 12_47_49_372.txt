@@ -1,5 +1,0 @@
-User: Harry bought a cat
-Harry [NNP], bought [VBD], a [DT], cat [NN], 
-Bot: Thank you for informing me ;)
-
-

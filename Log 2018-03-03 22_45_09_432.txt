@@ -1,9 +1,0 @@
-User: Amir had cleaned and washed his room
-Amir [NNP], had [VBD], cleaned [NN], and [CC], washed [VBD], his [PRP$], room [NN], 
-
-
-User: Amir had clean and wash his room
-Amir [NNP], had [VBD], clean [JJ], and [CC], wash [NNP], his [PRP$], room [NN], 
-
-
-

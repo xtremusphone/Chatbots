@@ -1,9 +1,0 @@
-User: Harry and Sally cleaned the house
-Harry [NNP], and [CC], Sally [NNP], cleaned [VBD], the [DT], house [NN], 
-Bot: Thank you for informing me ;)
-
-User: The house was cleaned and mopped by Amir and Sally
-The [DT], house [NN], was [VBD], cleaned [VBD], and [CC], mopped [VBD], by [IN], Amir [NNP], and [CC], Sally [NNP], 
-Bot: Thank you for informing me ;)
-
-

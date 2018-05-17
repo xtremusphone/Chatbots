@@ -1,5 +1,0 @@
-User: Harry ran away from school
-Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], 
-Bot: Thank you for informing me ;)
-
-

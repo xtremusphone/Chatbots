@@ -1,9 +1,0 @@
-User: The cat broke the vase
-The [DT], cat [VBD], broke [VBD], the [DT], vase [VBD], 
-Bot: Thank you for informing me ;)
-
-User: What broke the vase?
-What [WP], broke [VBD], the [DT], vase [VBD], ? [.], 
-Bot: The cat broke the vaseI am not sure about that
-
-

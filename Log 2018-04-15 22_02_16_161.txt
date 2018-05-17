@@ -1,9 +1,0 @@
-User: Harry and Ahmad ran away from school because they found it boring
-Harry [NNP], and [CC], Ahmad [NNP], ran [VBD], away [RB], from [IN], school [NN], because [IN], they [PRP], found [VBD], it [PRP], boring [JJ], 
-Bot: Thank you for informing me ;)
-
-User: Did Harry ran away from school?
-Did [VBD], Harry [NNP], ran [VBD], away [RB], from [IN], school [NN], ? [.], 
-Bot: No
-
-

@@ -36,6 +36,7 @@ public class Chatbots extends Application {
         stage.setOnCloseRequest((WindowEvent we) -> {
             System.out.println("Closing");
             controller.saveChatLog();
+        controller.saveDatabase();
         });
         
     }

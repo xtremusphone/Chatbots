@@ -1,8 +1,9 @@
 package chatbots;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TFIDF {
+public class TFIDF implements Serializable{
     
     //variables to store our Chatbot Knowledge Base to calculate variables
     public ArrayList<ArrayList<String>> sentence_list = new ArrayList<>();
@@ -11,13 +12,21 @@ public class TFIDF {
 
     }
     
-    private double TF(String word,ArrayList<String> sentence){
+    private double TF(String word,ArrayList<ArrayList<String>> sentence_list){
         double frequency = 0;
-        for(String wrd:sentence){
+        double vocab_count = 0;
+        /*for(String wrd:sentence_list{
             if(wrd.equalsIgnoreCase(word))
                 ++frequency;
+        }*/
+        for(ArrayList<String> sentence:sentence_list){
+            for(String sent_word:sentence){
+                if(sent_word.equalsIgnoreCase(word))
+                    ++frequency;
+                ++vocab_count;
+            }
         }
-        return frequency / sentence.size();
+        return frequency / vocab_count;
     }
     
     private double IDF(String word,ArrayList<ArrayList<String>> sentc_list){
@@ -30,24 +39,13 @@ public class TFIDF {
                 }
             }
         }
-        if(document_freq != 0){
-           double idf;
-            idf = Math.log10((double)sentence_list.size() / (double)document_freq);
-            return document_freq;
-        }
-        return 0.0;
-    }
-    
-    public double getTFIDF(String word,ArrayList<String> sentence){
-        return TF(word, sentence) * IDF(word, sentence_list);
+            double idf;
+            idf = Math.log10((double)sentc_list.size() / (double)document_freq);
+            return idf;
     }
     
     public double getCumulativeTFIDF(String word){
-        double cumulative_score = 0;
-        for(ArrayList<String> sentence_bank:sentence_list){
-            cumulative_score += getTFIDF(word, sentence_bank);
-        }      
-        return cumulative_score;
+        return TF(word, sentence_list) * IDF(word, sentence_list);
     }
     
 }

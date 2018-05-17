@@ -1,0 +1,65 @@
+User: Harry and Siti cleaned and mopped the house because Mr Lim told them
+Harry [NNP], and [CC], Siti [NNP], cleaned [VBD], and [CC], mopped [VBD], the [DT], house [NN], because [IN], Mr [NNP], Lim [NNP], told [VBD], them [PRP], 
+Bot: Thank you for informing me ;)
+
+User: Who cleaned the house
+Bot: Harry and Siti
+
+User: Did Harry cleaned the house
+Bot: Yes
+
+User: Did Harry cleaned and mopped the house?
+Bot: I am not sure about that
+
+User: Who told Harry to clean the house
+Bot: Harry and Siti
+
+User: Did Siti cleaned the house
+Bot: Yes
+
+User: Did Siti mopped the house
+Bot: Yes
+
+User: Did Siti mopped and Harry cleaned?
+Bot: I am not sure about that
+
+User: Did Siti mopped and did Harry cleaned?
+Bot: I am not sure about that
+
+User: Who cleaned and Why do they clean?
+Bot:  Harry and Siti and  I am sorry but I don't recall anything about that in my mind.
+
+User: Why Harry cleaned the house
+Bot: because Mr Lim told
+
+User: Who cleaned and Why cleaned?
+Bot:  Harry and Siti and  because Mr Lim told
+
+User: Siti killed Harry
+Siti [NNP], killed [VBD], Harry [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Did Harry killed Siti
+Bot: No
+
+User: Did Siti killed Harry
+Bot: Yes
+
+User: Harry loved Siti
+Harry [NNP], loved [VBD], Siti [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Siti loved Harry
+Siti [NNP], loved [VBD], Harry [NNP], 
+Bot: Thank you for informing me ;)
+
+User: Did Siti love Harry
+Bot: I am not sure about that
+
+User: Did Siti loved Harry
+Bot: Yes
+
+User: Did Harry loved Siti
+Bot: Yes
+
+
